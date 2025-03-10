@@ -1,8 +1,9 @@
-import { fontFamily } from "tailwindcss/defaultTheme";
 import { type Config } from "tailwindcss";
 
 const config: Config = {
-  content: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
   theme: {
     extend: {
       backgroundImage: {
@@ -34,7 +35,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["Open Sans", ...fontFamily.sans],
+        sans: ['var(--font-sans)']
       },
       fontSize: {
         base: ["1rem", "1.5rem"], // 16px
