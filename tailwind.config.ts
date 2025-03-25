@@ -7,7 +7,8 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        "landing-image": "url('/img/bg-digital-money.webp')",
+        "landing-mobile": "url('/img/landing-image.webp')",
+        "landing-desktop": "url('/img/bg-digital-money.webp')",
       },
       colors: {
         transparent: "transparent",
@@ -43,7 +44,7 @@ const config: Config = {
         sm: ["0.875rem", "1.25rem"], // 14px
         md: ["1.125rem", "1.75rem"], // 18px
         lg: ["1.25rem", "1.75rem"], // 20px
-        xl: ["1.5rem", "2rem"], // 24px
+        xl: ["1.75rem", "2.25rem"],  // 28px
         "2xl": ["2rem", "2.5rem"], // 32px
         "3xl": ["2.5rem", "3rem"], // 40px
         "4xl": ["3rem", "3.5rem"], // 48px
