@@ -2,6 +2,7 @@
 
 import { useForm } from "react-hook-form";
 import {RegisterFormValues} from "@/types/signup"
+import InputBase from "@/components/common/InputBase";
 
 export default function RegisterForm() {
     const {
@@ -25,19 +26,36 @@ export default function RegisterForm() {
     };
   
     return (
-      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 w-full max-w-md mx-auto p-4">
-        <input placeholder="Nombre" {...register("firstName")} />
-        <input placeholder="Apellido" {...register("lastName")} />
-        <input placeholder="DNI" {...register("dni")} />
-        <input placeholder="Correo electrónico" type="email" {...register("email")} />
-        <input placeholder="Contraseña" type="password" {...register("password")} />
-        <input placeholder="Confirmar contraseña" type="password" {...register("confirmPassword")} />
-        <input placeholder="Teléfono" type="tel" {...register("phone")} />
-  
-        <button type="submit" className="bg-primary text-black py-2 rounded">
+      <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="w-full max-w-md px-6 py-10 flex flex-col gap-4 text-sm md:max-w-4xl md:px-10 items-center"
+    >
+      <h2 className="text-center text-white font-semibold text-base md:text-lg md:col-span-2 mb-4">
+        Crear cuenta
+      </h2>
+    
+      <div className="grid grid-cols-1 gap-y-[20px] md:gap-x-10 md:grid-cols-2 md:gap-y-6 w-[300px] md:w-[715px] lg:w-[798px]">
+        <InputBase {...register("firstName")} placeholder="Nombre*" />
+        <InputBase {...register("lastName")} placeholder="Apellido*" />
+        <InputBase {...register("dni")} placeholder="DNI*" />
+        <InputBase {...register("email")} type="email" placeholder="Correo electrónico*" />
+
+        <p className="text-white text-xs leading-tight md:text-sm md:col-span-2">
+          Usa entre 6 y 20 caracteres (debe contener al menos 1 carácter especial, una mayúscula y un número).
+        </p>
+
+        <InputBase {...register("password")} type="password" placeholder="Contraseña*" />
+        <InputBase {...register("confirmPassword")} type="password" placeholder="Confirmar contraseña*" />
+        <InputBase {...register("phone")} type="tel" placeholder="Teléfono*" className="md:col-span-1" />
+
+        <button
+          type="submit"
+          className="bg-primary hover:opacity-90 text-black text-base font-bold py-3 rounded-md mt-2 md:mt-0 md:col-span-1"
+        >
           Crear cuenta
         </button>
-      </form>
+      </div>
+    </form>  
     );
   }
   
